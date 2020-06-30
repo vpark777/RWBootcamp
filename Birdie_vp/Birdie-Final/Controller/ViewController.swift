@@ -164,13 +164,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 }
-extension ViewController:UIImagePickerControllerDelegate & UINavigationControllerDelegate   {
-   
-    
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-    picker.delegate = self
+extension ViewController:UIImagePickerControllerDelegate , UINavigationControllerDelegate   {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     print("didFinishPickingMediaWithInfo")
-    if let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] {
+    picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+    //magePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+    
+        if let image = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.originalImage.rawValue)] {
         print("image created")
       tempImage = image as? UIImage
      

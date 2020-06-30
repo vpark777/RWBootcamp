@@ -31,27 +31,27 @@
                                 <rect key="frame" x="0.0" y="134.5" width="414" height="761.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textPostCell" rowHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="NQp-yc-Pgs">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textPostCell" rowHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="NQp-yc-Pgs">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NQp-yc-Pgs" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-S9-CT1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="J4N-rA-va6">
-                                                    <rect key="frame" x="10" y="10" width="43" height="49"/>
+                                                    <rect key="frame" x="10" y="10" width="60" height="49"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cPy-pN-7V2" userLabel="textTopSV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="43" height="40"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cPy-pN-7V2" userLabel="textTopSV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="mascot_swift-badge" translatesAutoresizingMaskIntoConstraints="NO" id="fbU-jd-zNi">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mascot_swift-badge" translatesAutoresizingMaskIntoConstraints="NO" id="fbU-jd-zNi">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="4y9-Nj-8eb"/>
                                                                         <constraint firstAttribute="height" constant="40" id="5Uf-Wn-Z6T"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="b0d-5V-9Rt" userLabel="verticalSubSV">
-                                                                    <rect key="frame" x="43" y="0.0" width="0.0" height="40"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="b0d-5V-9Rt" userLabel="verticalSubSV">
+                                                                    <rect key="frame" x="60" y="0.0" width="0.0" height="40"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbf-kf-a7T">
                                                                             <rect key="frame" x="0.0" y="0.0" width="0.0" height="16"/>
@@ -94,7 +94,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imagePostCell" rowHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="U3p-6s-xVj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imagePostCell" rowHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="U3p-6s-xVj">
                                         <rect key="frame" x="0.0" y="148" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U3p-6s-xVj" translatesAutoresizingMaskIntoConstraints="NO" id="njM-6g-3cl">
@@ -106,17 +106,17 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-qm-15f" userLabel="nonImageSV">
                                                             <rect key="frame" x="0.0" y="0.0" width="207" height="0.0"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-iO-mG2" userLabel="logo_unt_sv">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-iO-mG2" userLabel="logo_unt_sv">
                                                                     <rect key="frame" x="0.0" y="0.0" width="136" height="0.0"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mascot_swift-badge" translatesAutoresizingMaskIntoConstraints="NO" id="FlE-Bk-W6V">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="mascot_swift-badge" translatesAutoresizingMaskIntoConstraints="NO" id="FlE-Bk-W6V">
                                                                             <rect key="frame" x="0.0" y="-40" width="40" height="40"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="40" id="0bF-bb-fzu"/>
                                                                                 <constraint firstAttribute="height" constant="40" id="dzZ-GB-rUi"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uIl-EF-G07" userLabel="un_t_sv">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uIl-EF-G07" userLabel="un_t_sv">
                                                                             <rect key="frame" x="60" y="-40" width="76" height="40"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="40" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iao-Cu-Zd6">
@@ -156,7 +156,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cKy-Rj-jHq" userLabel="imageSV">
                                                             <rect key="frame" x="0.0" y="0.0" width="207" height="80"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="70" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBo-Iz-lua">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="70" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zBo-Iz-lua">
                                                                     <rect key="frame" x="0.0" y="0.0" width="207" height="80"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="80" id="MVf-N5-7Wu"/>
