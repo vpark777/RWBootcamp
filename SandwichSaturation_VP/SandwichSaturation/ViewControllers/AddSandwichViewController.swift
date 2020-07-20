@@ -82,7 +82,7 @@ private let context = (UIApplication.shared.delegate as! AppDelegate).persistent
                    // sauceAmounts[2].addToFoodItem(newSandwich)
                 }
                 
-                appDelegate.saveContext()
+            //    appDelegate.saveContext()
              //saved into database
     
     saveSandwich(sandwich: newSandwich)

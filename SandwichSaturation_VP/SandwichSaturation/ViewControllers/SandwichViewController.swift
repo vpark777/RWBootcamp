@@ -192,9 +192,10 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
         }
     }
   func saveSandwich(_ sandwich: SandwichCoreData) {
-  //  cdSandwiches.append(sandwich)
+   cdSandwiches.append(sandwich)
+    appDelegate.saveContext()
     
-    reloadCdSandwiches()
+   // reloadCdSandwiches()
     tableView.reloadData()
   }
 
@@ -252,7 +253,17 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
     return searchController.isActive &&
       (!isSearchBarEmpty || searchBarScopeIsFiltering)
   }
-  
+  func reloadCdSandwiches(){
+  let request = SandwichCoreData.fetchRequest() as NSFetchRequest<SandwichCoreData>
+   let sort = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+     request.sortDescriptors = [sort]
+   
+     do {
+         cdSandwiches = try context.fetch(request)
+     } catch{
+         print("Error loading sandwiches \(error)")
+     }
+  }
   // MARK: - Table View
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -262,22 +273,37 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
     return isFiltering ? filteredSandwiches.count : cdSandwiches.count
   }
     
-    func reloadCdSandwiches(){
-    let request = SandwichCoreData.fetchRequest() as NSFetchRequest<SandwichCoreData>
-     let sort = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
-       request.sortDescriptors = [sort]
-     
-       do {
-           cdSandwiches = try context.fetch(request)
-       } catch{
-           print("Error loading sandwiches \(error)")
-       }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            if isFiltering{
+                
+                let sandwich = filteredSandwiches[indexPath.row]
+                context.delete(sandwich)
+                filteredSandwiches.remove(at:indexPath.row)
+ 
+            } else {
+                let sandwich = cdSandwiches[indexPath.row]
+                context.delete(sandwich)
+                cdSandwiches.remove(at:indexPath.row)
+            }
+         
+            
+            appDelegate.saveContext()
+            
+            tableView.deleteRows(at:[indexPath], with: .fade)
+            reloadCdSandwiches()
+            
+         //   tableView.reloadData()
+           
+            
+            
+        }
     }
  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "sandwichCell", for: indexPath) as? SandwichCell
       else { return UITableViewCell() }
-    
+
     
     let sandwich = isFiltering ?
       filteredSandwiches[indexPath.row] :
