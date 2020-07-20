@@ -18,7 +18,7 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
   let defaults = UserDefaults.standard
   var previousIndex = 0
   
-  private var filtered = [SandwichCoreData]()
+  //private var filtered = [SandwichCoreData]()
  
   private let appDelegate = UIApplication.shared.delegate as! AppDelegate
   private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -192,8 +192,9 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
         }
     }
   func saveSandwich(_ sandwich: SandwichCoreData) {
-    cdSandwiches.append(sandwich)
+  //  cdSandwiches.append(sandwich)
     
+    reloadCdSandwiches()
     tableView.reloadData()
   }
 
@@ -260,7 +261,7 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return isFiltering ? filteredSandwiches.count : cdSandwiches.count
   }
-    /*
+    
     func reloadCdSandwiches(){
     let request = SandwichCoreData.fetchRequest() as NSFetchRequest<SandwichCoreData>
      let sort = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
@@ -272,10 +273,11 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
            print("Error loading sandwiches \(error)")
        }
     }
- */
+ 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "sandwichCell", for: indexPath) as? SandwichCell
       else { return UITableViewCell() }
+    
     
     let sandwich = isFiltering ?
       filteredSandwiches[indexPath.row] :
